@@ -26,9 +26,13 @@ interests:
 
 education:
   courses:
-    - course: PhD in Artificial Intelligence
+    - course: PhD in Information and Communication Engineering
       institution: Sapienza University of Rome
       year: 2011
+  courses:
+    - course: MSc in Telecommunication Engineering
+      institution: Sapienza University of Rome
+      year: 2008
 
 # Social/Academic Networking
 # For available icons, see: https://docs.hugoblox.com/getting-started/page-builder/#icons

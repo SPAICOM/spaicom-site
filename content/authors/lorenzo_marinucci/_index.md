@@ -10,7 +10,7 @@ last_name: Marinucci
 superuser: false
 
 # Role/position
-role: Ph.D. Candidate
+role: Ph.D. Candidate in Statistical Sciences
 
 # Organizations/Affiliations
 organizations:
@@ -41,7 +41,7 @@ education:
 social:
   - icon: envelope
     icon_pack: fas
-    link: 'mailto:lorenzo.marinucci@uniroma1.it'
+    link: 'mailto:l.marinucci@uniroma1.it'
   - icon: linkedin
     icon_pack: fab
     link: https://www.linkedin.com/in/lorenzo-marinucci-13ab48267/
