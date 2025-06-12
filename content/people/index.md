@@ -17,6 +17,8 @@ sections:
           - Administration
           - Visitors
           - Alumni
+          - Post Doc
+          - Ph.D. Candidate
       sort_by: Params.last_name
       sort_ascending: true
     design:
