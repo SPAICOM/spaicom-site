@@ -1,5 +1,5 @@
 ---
-title: "An example journal article"
+title: "Relative Representations of Latent Spaces enable Efficient Semantic Channel Equalization"
 authors:
 - Tomas Huttebraucker
 - simone-fiorellino
@@ -27,7 +27,8 @@ abstract: In multi-user semantic communication, language mismatch poses a signif
 summary: ""
 
 tags:
-- semantic-communications
+- Semantic Communications
+
 featured: false
 
 # links:
