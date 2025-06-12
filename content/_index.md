@@ -8,8 +8,7 @@ sections:
   - block: hero
     content:
       title: |
-        Wowchemy
-        Research Group
+        Signal Processing and Artificial Intelligence for Communications
       image:
         filename: welcome.jpg
       text: |
