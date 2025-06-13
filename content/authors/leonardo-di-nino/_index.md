@@ -45,6 +45,9 @@ social:
   - icon: linkedin
     icon_pack: fab
     link: https://www.linkedin.com/in/leonardodinino/
+  - icon: google-scholar
+    icon_pack: ai
+    link: https://scholar.google.com/citations?hl=en&user=4UdFEvAAAAAJ
   - icon: github
     icon_pack: fab
     link: https://github.com/LeoDiNino97
