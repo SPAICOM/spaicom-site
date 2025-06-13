@@ -10,11 +10,11 @@ authors:
   - Emilio Calvanese Strinati
   - paolo-di-lorenzo
 
-date: '2013-07-01T00:00:00Z'
+date: '2024-08-26T00:00:00Z'
 doi: '10.23919/EUSIPCO63174.2024.10715102'
 
 # Schedule page publish date (NOT publication's date).
-publishDate: '2017-01-01T00:00:00Z'
+publishDate: '2024-08-26T00:00:00Z'
 
 # Publication type.
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
