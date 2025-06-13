@@ -27,7 +27,7 @@ abstract: In multi-user semantic communication, language mismatch poses a signif
 summary: ""
 
 tags:
-- Semantic Communications
+ - Goal-oriented Semantic Communications
 
 featured: false
 
