@@ -15,8 +15,8 @@ sections:
           - Researchers
           - Grad Students
           - Administration
-          - Postdoctoral Researcher
-          - Ph.D. Candidate
+          - Postdoctoral Researchers
+          - Ph.D. Candidates
           - Visitors
           - Alumni
       sort_by: Params.last_name

@@ -29,7 +29,11 @@ abstract: "The aim of this paper is to propose a novel framework to infer the sh
 # Summary. An optional shortened abstract.
 summary: ''
 
-tags: []
+tags:
+ - Graph Learning
+ - Graph Signal Processing
+ - Representation Learning
+ - Sheaf Signal Processing
 
 # Display this page in the Featured widget?
 featured: true
