@@ -1,16 +1,16 @@
 ---
 # Display name
-title: Paolo Di Lorenzo
+title: Gabriele D'Acunto
 
 # Full Name (for SEO)
-first_name: Paolo
-last_name: Di Lorenzo
+first_name: Gabriele
+last_name: D'Acunto
 
 # Is this the primary user of the site?
-superuser: true
+superuser: false
 
 # Role/position
-role: Associate Professor
+role: Postdoctoral Researcher
 
 # Organizations/Affiliations
 organizations:
@@ -22,17 +22,17 @@ bio: My research interests include distributed robotics, mobile computing and pr
 
 interests:
   - Signal Processing & Topological Signal Processing
+  - Topological Deeplearning
   - Semantic Communications
 
 education:
   courses:
-    - course: PhD in Information and Communication Engineering
+    - course: MSc in Physics of Complex Systems
+      institution: University of Turin
+      year: 2017
+    - course: BSc in Physics
       institution: Sapienza University of Rome
-      year: 2011
-  courses:
-    - course: MSc in Telecommunication Engineering
-      institution: Sapienza University of Rome
-      year: 2008
+      year: 2013
 
 # Social/Academic Networking
 # For available icons, see: https://docs.hugoblox.com/getting-started/page-builder/#icons
@@ -41,14 +41,17 @@ education:
 social:
   - icon: envelope
     icon_pack: fas
-    link: 'mailto:paolo.dilorenzo@uniroma1.it'
+    link: 'mailto:gabriele.dacunto@uniroma1.it'
   - icon: linkedin
     icon_pack: fab
-    link: https://www.linkedin.com/in/paolo-dilorenzo/
+    link: https://www.linkedin.com/in/gabriele-d-acunto-b7b57ba0/
   - icon: google-scholar
     icon_pack: ai
-    link: https://scholar.google.it/citations?user=VZYvspQAAAAJ&hl
-
+    link: https://scholar.google.com/citations?hl=en&user=dIVgmlUAAAAJ
+  - icon: github
+    icon_pack: fab
+    link: https://github.com/OfficiallyDAC
+    
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
 # - icon: cv
@@ -64,7 +67,7 @@ highlight_name: false
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
-  - Principal Investigators
+  - Postdoctoral Researcher
+   
 ---
 
-Paolo Di Lorenzo is an associate professor of signal processing at the Department of Information Engineering, Electronics and Telecommunications at Sapienza University of Rome. His research interests include graph signal processing, distributed optimization, machine learning on networks, and edge computing for next-generation wireless systems. He leads research efforts on signal processing for 5G/6G communications and networked intelligent systems, with a focus on scalable algorithms and adaptive learning over graphs.

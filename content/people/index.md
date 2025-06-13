@@ -15,10 +15,10 @@ sections:
           - Researchers
           - Grad Students
           - Administration
+          - Postdoctoral Researcher
+          - Ph.D. Candidate
           - Visitors
           - Alumni
-          - Post Doc
-          - Ph.D. Candidate
       sort_by: Params.last_name
       sort_ascending: true
     design:
