@@ -1,6 +1,6 @@
 ---
 title: Contact
-date: 2022-10-24
+date: 2024-06-13
 
 type: landing
 
@@ -13,16 +13,16 @@ sections:
       email: test@example.org
       phone: 888 888 88 88
       address:
-        street: 450 Serra Mall
-        city: Stanford
-        region: CA
-        postcode: '94305'
-        country: United States
-        country_code: US
+        street: Via Eudossiana 18
+        city: Rome
+        region: RM
+        postcode: '00184'
+        country: Italy
+        country_code: IT
       coordinates:
-        latitude: '37.4275'
-        longitude: '-122.1697'
-      directions: Enter Building 1 and take the stairs to Office 200 on Floor 2
+        latitude: '41.893498'
+        longitude: '12.493990'
+      directions: Building B, first floor, room 104
       office_hours:
         - 'Monday 10:00 to 13:00'
         - 'Wednesday 09:00 to 10:00'
