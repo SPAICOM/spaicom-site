@@ -1,26 +1,24 @@
 ---
-title: Lorenzo Marinucci
+title: Mario Edoardo Pandolfo
 
-first_name: Lorenzo
-last_name: Marinucci
+first_name: Mario Edoardo
+last_name: Pandolfo
 
 superuser: false
 
-role: Ph.D. Student in Statistical Sciences
+role: Ph.D. Students in Data Science
 
 organizations:
   - name: Sapienza University of Rome
     url: 'https://www.uniroma1.it/it/pagina-strutturale/home'
 
-bio: My recent work focuses on adaptive learning models on cell and simplicial complexes, as well as on the representation and inference of Gaussian processes on these spaces. Looking ahead, I would like to deepen and extend my understanding of probabilistic and learning models on topological spaces in general, and explore their statistical and computational properties.
+bio: 
 
 interests:
   
   - Topological Signal Processing
   
-  - Adaptive Learning
-  
-  - Gaussian Processes
+  - Semantic Communication
   
 
 education:
@@ -38,13 +36,13 @@ education:
 social:
   - icon: envelope
     icon_pack: fas
-    link: 'mailto:l.marinucci@uniroma1.it'
+    link: 'mailto:marioedoardo.pandolfo@uniroma1.it'
   - icon: linkedin
     icon_pack: fab
-    link: 
+    link: https://www.linkedin.com/in/jrhin/
   - icon: google-scholar
     icon_pack: ai
-    link: https://scholar.google.com/citations?user=onPjXf4AAAAJ
+    link: https://scholar.google.com/citations?user=wAeScL8AAAAJ
 
 email: ''
 
