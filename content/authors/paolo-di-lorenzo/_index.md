@@ -40,6 +40,9 @@ social:
   - icon: linkedin
     icon_pack: fab
     link: https://www.linkedin.com/in/paolo-dilorenzo/
+  - icon: github
+    icon_pack: fab
+    link: 
   - icon: google-scholar
     icon_pack: ai
     link: https://scholar.google.it/citations?user=VZYvspQAAAAJ

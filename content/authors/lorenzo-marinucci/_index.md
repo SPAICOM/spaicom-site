@@ -26,13 +26,13 @@ interests:
 education:
   courses:
   
-    - course: M.Sc. in Data Science 
+    - course: M.Sc. in Applied Mathematics 
       institution:  Sapienza University of Rome 
       year:  2024
   
-    - course:  B.Sc. in Computer and System Engineering 
+    - course:  B.Sc. in Mathematics 
       institution:  Sapienza University of Rome 
-      year:  2021
+      year:  2019
   
 
 social:
@@ -41,7 +41,10 @@ social:
     link: 'mailto:l.marinucci@uniroma1.it'
   - icon: linkedin
     icon_pack: fab
-    link: 
+    link: https://www.linkedin.com/in/lorenzo-marinucci-13ab48267/
+  - icon: github
+    icon_pack: fab
+    link: https://github.com/Lorenzomarinucci96
   - icon: google-scholar
     icon_pack: ai
     link: https://scholar.google.com/citations?user=onPjXf4AAAAJ
