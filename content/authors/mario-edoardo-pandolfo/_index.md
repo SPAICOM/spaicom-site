@@ -6,7 +6,7 @@ last_name: Pandolfo
 
 superuser: false
 
-role: Ph.D. Students in Data Science
+role: Ph.D. Student in Data Science
 
 organizations:
   - name: Sapienza University of Rome

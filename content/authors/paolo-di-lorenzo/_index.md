@@ -45,7 +45,7 @@ social:
     link: 
   - icon: google-scholar
     icon_pack: ai
-    link: https://scholar.google.it/citations?user=VZYvspQAAAAJ
+    link: https://scholar.google.com/citations?user=VZYvspQAAAAJ
 
 email: ''
 
