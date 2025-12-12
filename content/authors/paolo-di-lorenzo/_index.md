@@ -12,13 +12,17 @@ organizations:
   - name: Sapienza University of Rome
     url: 'https://www.uniroma1.it/it/pagina-strutturale/home'
 
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
+bio: My research interests include topological signal processing, topological deep learning, artificial intelligence for communications, semantic communications, smart wireless environments, and federated learning.
 
 interests:
   
   - Signal Processing
   
-  - Semantic Communications
+  - Machine Learning
+  
+  - Network Theory
+  
+  - Wirleless Communications
   
 
 education:
@@ -26,7 +30,7 @@ education:
   
     - course: Ph.D. in Information and Communication Engineering
       institution: Sapienza University of Rome
-      year: 2011
+      year: 2012
   
     - course: M.Sc. in Telecommunication Engineering
       institution: Sapienza University of Rome
@@ -57,4 +61,4 @@ user_groups:
   
 ---
 
-Paolo Di Lorenzo is an associate professor of signal processing at the Department of Information Engineering, Electronics and Telecommunications at Sapienza University of Rome. His research interests include graph signal processing, distributed optimization, machine learning on networks, and edge computing for next-generation wireless systems.
+Paolo Di Lorenzo received the M.Sc. and Ph.D. degrees in telecommunication engineering from  Sapienza University of Rome, Italy, in 2008 and 2012, respectively. Currently, he is an Associate Professor with the Department of Information Engineering, Electronics, and Telecommunications at Sapienza University of Rome, Rome, Italy. He is the technical manager of the SNS-JU European Project 6G-GOALS, and was the Principal Investigator of CNIT-Sapienza Research Unit in the H2020 European Project RISE 6G. His research interests include topological signal processing, goal-oriented and semantic communications, distributed optimization, and federated learning. He held a visiting research appointment with the Department of Electrical Engineering, University of California at Los Angeles, Los Angeles, CA, USA. He is the recipient of the 2022 EURASIP Early Career Award, and of three best student paper awards at IEEE SPAWC10, EURASIP EUSIPCO11, and IEEE CAMSAP11, respectively. He is also the recipient of the 2012 GTTI (Italian National Group on Telecommunications and Information Theory) Award for the Best Ph.D. Thesis in communication engineering. He served as an Associate Editor for the IEEE Transactions on Signal Processing, for the IEEE Transactions on Signal and Information Processing over Networks, and for the EURASIP Journal on Advances in Signal Processing. He is currently a Senior Area Editor of the IEEE Transactions on Signal Processing. He is IEEE senior member since 2019.

@@ -18,8 +18,6 @@ interests:
   
   - Topological Signal Processing
   
-  - 
-  
 
 education:
   courses:
