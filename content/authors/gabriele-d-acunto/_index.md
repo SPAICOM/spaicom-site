@@ -1,43 +1,40 @@
 ---
-# Display name
 title: Gabriele D'Acunto
 
-# Full Name (for SEO)
 first_name: Gabriele
 last_name: D'Acunto
 
-# Is this the primary user of the site?
 superuser: false
 
-# Role/position
 role: Postdoctoral Researcher
 
-# Organizations/Affiliations
 organizations:
   - name: Sapienza University of Rome
     url: 'https://www.uniroma1.it/it/pagina-strutturale/home'
 
-# Short bio (displayed in user profile at end of posts)
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
+bio: My research focuses on representation and learning methods grounded in algebraic topology and category theory, applied to causal AI, probabilistic topological modeling, signal processing, and semantic communications.
 
 interests:
-  - Signal Processing & Topological Signal Processing
-  - Topological Deeplearning
-  - Semantic Communications
+  
+  - Causal AI
+  
+  - Probabilistic Modeling
+  
+  - Signal Processing
+  
 
 education:
   courses:
-    - course: MSc in Physics of Complex Systems
-      institution: University of Turin
-      year: 2017
-    - course: BSc in Physics
-      institution: Sapienza University of Rome
-      year: 2013
+  
+    - course: Ph.D. in Data Science 
+      institution:  Sapienza University of Rome 
+      year:  2024
+  
+    - course:  M.Sc. in Physics of Complex Systems 
+      institution:  University of Turin 
+      year:  2017
+  
 
-# Social/Academic Networking
-# For available icons, see: https://docs.hugoblox.com/getting-started/page-builder/#icons
-#   For an email link, use "fas" icon pack, "envelope" icon, and a link in the
-#   form "mailto:your-email@example.com" or "#contact" for contact widget.
 social:
   - icon: envelope
     icon_pack: fas
@@ -45,29 +42,25 @@ social:
   - icon: linkedin
     icon_pack: fab
     link: https://www.linkedin.com/in/gabriele-d-acunto-b7b57ba0/
-  - icon: google-scholar
-    icon_pack: ai
-    link: https://scholar.google.com/citations?hl=en&user=dIVgmlUAAAAJ
   - icon: github
     icon_pack: fab
     link: https://github.com/OfficiallyDAC
-    
-# Link to a PDF of your resume/CV from the About widget.
-# To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
-# - icon: cv
-#   icon_pack: ai
-#   link: files/cv.pdf
+  - icon: google-scholar
+    icon_pack: ai
+    link: https://scholar.google.com/citations?user=dIVgmlUAAAAJ
 
-# Enter email to display Gravatar (if Gravatar enabled in Config)
 email: ''
 
-# Highlight the author in author lists? (true/false)
 highlight_name: false
 
-# Organizational groups that you belong to (for People widget)
-#   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
+  
   - Postdoctoral Researchers
-   
+  
 ---
 
+I am a Postdoctoral Researcher under the supervision of Prof. Sergio Barbarossa at the Department of Information Engineering, Electronics and Telecommunications (DIET), Sapienza University of Rome, Italy. My research focuses on representation and learning methods grounded in algebraic topology and category theory, with applications to causal AI (in particular causal abstraction and causal discovery), probabilistic topological modeling, signal processing, and semantic communications.
+
+I earned a Bachelor’s degree in Theoretical Physics from Sapienza University of Rome in 2013, followed by a Master’s degree in Physics of Complex Systems from the University of Turin in 2017. In 2024, I received a Ph.D. in Data Science from Sapienza University of Rome, under the supervision of Dr. Francesco Bonchi.
+
+From 2017 to 2019, I worked as a Financial Data Scientist at Fondaco SGR in Turin, Italy. From 2020 to 2022, I was a Junior Researcher at the Algorithmic and Data Analytics Lab of the ISI Foundation in Turin. From 2022 to 2024, I conducted research activities within the Machine Learning Foundations team at CENTAI in Turin, led by Prof. Fabio Vitale.
