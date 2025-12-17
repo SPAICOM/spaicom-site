@@ -6,7 +6,7 @@ title: 'Learning Sheaf Laplacian Optimizing Restriction Maps'
 # and it will be replaced with their full name and linked to their profile.
 authors:
   - leonardo-di-nino
-  - Sergio Barbarossa
+  - sergio-barbarossa
   - paolo-di-lorenzo
 
 date: '2024-10-27T00:00:00Z'
