@@ -55,7 +55,7 @@ highlight_name: false
 
 user_groups:
   
-  - Postdoctoral Researchers
+  - Senior Researchers
   
 ---
 
