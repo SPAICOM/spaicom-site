@@ -6,7 +6,7 @@ title: 'Dynamic Relative Representations for Goal-Oriented Semantic Communicatio
 # and it will be replaced with their full name and linked to their profile.
 authors:
   - simone-fiorellino
-  - Claudio Battiloro
+  - claudio-battiloro
   - Emilio Calvanese Strinati
   - paolo-di-lorenzo
 

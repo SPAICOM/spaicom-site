@@ -6,7 +6,7 @@ title: 'Topological Adaptive Learning over Cell Complexes'
 # and it will be replaced with their full name and linked to their profile.
 authors:
   - lorenzo-marinucci
-  - Claudio Battiloro
+  - claudio-battiloro
   - paolo-di-lorenzo
 
 date: '2024-08-26T00:00:00Z'

@@ -6,7 +6,7 @@ title: 'Topological neural networks over the air'
 # and it will be replaced with their full name and linked to their profile.
 authors:
   - simone-fiorellino
-  - Claudio Battiloro
+  - claudio-battiloro
   - paolo-di-lorenzo
 
 # Author notes (optional)

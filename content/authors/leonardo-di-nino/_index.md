@@ -12,11 +12,13 @@ organizations:
   - name: Sapienza University of Rome
     url: 'https://www.uniroma1.it/it/pagina-strutturale/home'
 
-bio: 
+bio: My research interests revolve around topological and geometric methods for signal processing and deep learning, with a particular focus on graph-based methods. 
 
 interests:
   
-  - Topological Signal Processing
+  - Non-Euclidean Signal Processing
+  
+  - Deep Learning
   
 
 education:
@@ -28,7 +30,7 @@ education:
   
     - course:  B.Sc. in Management Engineering 
       institution:  Sapienza University of Rome 
-      year:  2023
+      year:  2022
   
 
 social:

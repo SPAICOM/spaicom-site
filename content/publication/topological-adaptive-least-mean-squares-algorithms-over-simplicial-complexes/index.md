@@ -6,7 +6,7 @@ title: 'Topological Adaptive Least Mean Squares Algorithms over Simplicial Compl
 # and it will be replaced with their full name and linked to their profile.
 authors:
   - lorenzo-marinucci
-  - Claudio Battiloro
+  - claudio-battiloro
   - paolo-di-lorenzo
 
 date: '2025-05-29T00:00:00Z'
