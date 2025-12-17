@@ -6,7 +6,7 @@ last_name: Battiloro
 
 superuser: false
 
-role: Alumni
+role: Postdoctoral Fellow
 
 organizations:
   - name: Harvard University

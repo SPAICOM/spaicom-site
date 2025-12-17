@@ -16,9 +16,7 @@ bio: My research interests revolve around topological and geometric methods for 
 
 interests:
   
-  - Non-Euclidean Signal Processing
-  
-  - Deep Learning
+  - Non-Euclidean Signal Processing and Deep Learning
   
 
 education:

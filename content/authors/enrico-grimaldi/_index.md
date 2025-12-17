@@ -12,11 +12,13 @@ organizations:
   - name: Sapienza University of Rome
     url: 'https://www.uniroma1.it/it/pagina-strutturale/home'
 
-bio: 
+bio: My research interests include topological signal processing and geometric deep learning, with applications to wireless communications.
 
 interests:
   
   - Topological Signal Processing
+  
+  - Geometric Deep Learning
   
   - Semantic Communication
   
@@ -57,3 +59,5 @@ user_groups:
   
 ---
 
+Enrico Grimaldi is a Ph.D. student in Data Science at Sapienza University of Rome and a doctoral fellow of the Sapienza School for Advanced Studies (SSAS) in the academic class of Sciences and Technologies.
+He received the M.Sc. degree in Data Science (summa cum laude) from Sapienza University of Rome in 2024, where he completed the honors program, and the B.Sc. degree in Management Engineering (summa cum laude) in 2022. He is currently affiliated with the National Inter-University Consortium for Telecommunications (CNIT), contributing to the 6G-GOALS project. His research focuses on the intersection of topological signal processing, machine learning, and semantic communications.
