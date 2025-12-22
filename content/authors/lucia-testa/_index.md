@@ -9,7 +9,7 @@ superuser: false
 role: Postdoctoral Fellow
 
 organizations:
-  - name: Universitätsklinikum Hamburg-Eppendorf
+  - name: Universitatsklinikum Hamburg-Eppendorf
     url: 'https://www.uke.de/'
 
 bio: My research focuses on developing theory and methods in topological signal processing and deep learning, with applications to drug discovery and omics data, including scRNA-seq and spatial transcriptomics.
