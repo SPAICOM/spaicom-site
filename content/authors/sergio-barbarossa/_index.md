@@ -12,7 +12,8 @@ organizations:
   - name: Sapienza University of Rome
     url: 'https://www.uniroma1.it/it/pagina-strutturale/home'
 
-bio: 
+bio: My research interests include topological signal processing, topological deep learning, smart wireless environments, and federated learning.
+
 
 interests:
   
@@ -63,3 +64,4 @@ user_groups:
   
 ---
 
+Sergio Barbarossa (Life Fellow, IEEE) is a Full Professor with Sapienza University of Rome and a Senior Research Fellow with Sapienza School for Advanced Studies (SSAS). He is a EURASIP Fellow. He received the Technical Achievements Award from the European Association for Signal Processing (EURASIP) society and the IEEE Best Paper Awards from the IEEE Signal Processing Society in the years 2000, 2014, and 2020. He served as an IEEE Distinguished Lecturer. He has been the scientific coordinator of several European projects. He is currently the coordinator of a national project on Network Intelligence and he is involved in European projects on semantic communications. His research interests include topological signal processing and learning, generative models for semantic and goal-oriented communications, and 6G networks and distributed edge machine learning.

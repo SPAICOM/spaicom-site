@@ -6,7 +6,7 @@ last_name: D'Acunto
 
 superuser: false
 
-role: Postdoctoral Researcher
+role: Postdoctoral Fellow
 
 organizations:
   - name: Sapienza University of Rome

@@ -49,7 +49,7 @@ social:
     link: https://github.com/clabat9
   - icon: google-scholar
     icon_pack: ai
-    link: https://scholar.google.com/citations?user=_J11o_IAAAAJ&hl=it
+    link: https://scholar.google.com/citations?user=_J11o_IAAAAJ
 
 email: ''
 
