@@ -24,8 +24,6 @@ interests:
   
   - Wireless Networks
   
-  - 
-  
 
 education:
   courses:
