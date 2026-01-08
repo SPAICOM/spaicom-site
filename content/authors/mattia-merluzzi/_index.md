@@ -9,14 +9,18 @@ superuser: false
 role: Senior Research Engineer at CEA, Leti, France
 
 organizations:
-  - name: Commissariat à l'Énergie Atomique et aux Énergies Alternatives
+  - name: Commissariat a l'Energie Atomique et aux Energies Alternatives
     url: 'https://www.leti-cea.fr/cea-tech/leti'
 
 bio: My research interests include energy-aware 6G networks, with a focus on edge computing and edge intelligence with semantic and goal-oriented communications
 
 interests:
   
-  - Semantic and goal-oriented communications, edge AI, 6G
+  - Semantic and goal-oriented communications
+  
+  - Edge AI
+  
+  - 6G
   
 
 education:
@@ -43,7 +47,7 @@ social:
     link: 
   - icon: google-scholar
     icon_pack: ai
-    link: https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=jFA-Mp4AAAAJ&sortby=pubdate
+    link: https://scholar.google.com/citations?user=jFA-Mp4AAAAJ
 
 email: ''
 
