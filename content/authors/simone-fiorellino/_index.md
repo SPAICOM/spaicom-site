@@ -32,8 +32,8 @@ education:
       institution:  Sapienza University of Rome 
       year:  2022
   
-    - course:  B.Sc. in Scienze e Tecnologie per i Media 
-      institution:  Università degli Studi di Roma Tor Vergata 
+    - course:  B.Sc. in Media Science and Technology 
+      institution:  Tor Vergata University of Rome
       year:  2020
   
 
