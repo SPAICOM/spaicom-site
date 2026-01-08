@@ -49,7 +49,7 @@ social:
     link: https://github.com/SimoneFiorellino
   - icon: google-scholar
     icon_pack: ai
-    link: https://scholar.google.com/citations?user=nKMc4GQAAAAJ&hl=it&oi=ao
+    link: https://scholar.google.com/citations?user=nKMc4GQAAAAJ
 
 email: ''
 
