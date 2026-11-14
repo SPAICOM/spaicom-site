@@ -1,0 +1,47 @@
+name: Sync publications from Google Sheet
+
+# Creates a page for every new DOI / arXiv ID in the sheet's publications tab and
+# opens a pull request. Existing pages are never modified.
+#
+# One-time setup: add the repository variables SPAICOM_SHEET_ID and
+# SPAICOM_PUBLICATIONS_GID (Settings > Secrets and variables > Actions > Variables)
+# and allow Actions to create pull requests (Settings > Actions > General).
+#
+# Note: pull requests opened with the default GITHUB_TOKEN do not trigger the
+# "Check pull request" workflow. Use a personal access token or a GitHub App
+# token in `token:` below if you want checks to run on these PRs.
+
+on:
+  schedule:
+    - cron: '30 5 * * *' # every day at 05:30 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    if: github.repository_owner != 'HugoBlox'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: Create pages for new papers
+        env:
+          SPAICOM_SHEET_ID: ${{ vars.SPAICOM_SHEET_ID }}
+          SPAICOM_PUBLICATIONS_GID: ${{ vars.SPAICOM_PUBLICATIONS_GID }}
+          CROSSREF_MAILTO: ${{ vars.CROSSREF_MAILTO }}
+        run: uv run scripts/sync_publications.py --report "$RUNNER_TEMP/report.md"
+      - name: Validate content
+        run: uv run scripts/check_content.py
+      - name: Open pull request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          add-paths: content/publication
+          commit-message: 'content: add publications from Google Sheet'
+          title: 'Add new publications from Google Sheet'
+          body-path: ${{ runner.temp }}/report.md
+          branch: sync/publications
+          labels: automated-pr, content
+          delete-branch: true

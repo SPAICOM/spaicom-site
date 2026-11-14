@@ -14,7 +14,7 @@ sections:
       text: |
         <br>
         
-        The **Wowchemy Research Group** has been a center of excellence for Artificial Intelligence research, teaching, and practice since its founding in 2016.
+        **SPAICOM** is a research group at the Department of Information Engineering, Electronics, and Telecommunications of Sapienza University of Rome. We develop signal processing and machine learning methods for communication systems, with a focus on topological signal processing and topological deep learning, goal-oriented and semantic communications, and distributed and federated learning.
   
   - block: collection
     content:
