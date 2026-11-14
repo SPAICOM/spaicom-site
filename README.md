@@ -1,48 +1,84 @@
-# [Hugo Research Group Theme](https://github.com/wowchemy/starter-hugo-research-group)
+# SPAICOM site
 
-[![Screenshot](preview.png)](https://hugoblox.com/hugo-themes/)
+Website of the **SPAICOM** research group (Signal Processing and Artificial Intelligence
+for Communications), Sapienza University of Rome.
+Live at <https://spaicom.github.io/spaicom-site/>.
 
-The **Research Group Template** empowers your research group to easily create a beautiful website with a stunning homepage, news, academic publications, events, team profiles, and a contact form.
+Built with [Hugo](https://gohugo.io) and the [Hugo Blox / Wowchemy](https://hugoblox.com)
+research-group theme. Every push to `main` is built and published to GitHub Pages.
 
-️**Trusted by 250,000+ researchers, educators, and students.** Highly customizable via the integrated **no-code, widget-based Wowchemy page builder**, making every site truly personalized ⭐⭐⭐⭐⭐
+## What goes where
 
-[![Get Started](https://img.shields.io/badge/-Get%20started-ff4655?style=for-the-badge)](https://hugoblox.com/hugo-themes/)
-[![Discord](https://img.shields.io/discord/722225264733716590?style=for-the-badge)](https://discord.com/channels/722225264733716590/742892432458252370/742895548159492138)  
-[![Twitter Follow](https://img.shields.io/twitter/follow/GetResearchDev?label=Follow%20on%20Twitter)](https://twitter.com/wowchemy)
+| Content | Where it comes from |
+|---|---|
+| **People** | Google Sheet (tab "people") -> `content/authors/`, synced nightly through a pull request |
+| **Publications** | Google Sheet (tab "publications": one DOI or arXiv ID per row) -> `content/publication/` |
+| **News, events** | `just new-post` / `just new-event`, or ask an AI agent |
+| **Page text** (home, contact, menus) | Edit `content/` and `config/` directly |
 
-Easily write technical content with plain text Markdown, LaTeX math, diagrams, RMarkdown, or Jupyter, and import publications from BibTeX.
+Non-technical members only need the Google Sheet, or an AI agent that follows
+[`AGENTS.md`](AGENTS.md) (works with Claude Code, Codex, Cursor and similar tools; task
+playbooks are in [`.agents/skills/`](.agents/skills)).
 
-[Check out the latest demo](https://research-group.netlify.app/) of what you'll get in less than 60 seconds, or [view the showcase](https://hugoblox.com/creators/).
+## Getting started
 
-The integrated [**Wowchemy**](https://hugoblox.com) website builder and CMS makes it easy to create a beautiful website for free. Edit your site in the CMS (or your favorite editor), generate it with [Hugo](https://github.com/gohugoio/hugo), and deploy with GitHub or Netlify. Customize anything on your site with widgets, light/dark themes, and language packs.
+```bash
+nix develop          # Hugo, Go, uv, just, git, gh. Or install these yourself.
+cp .env.example .env # then fill in the Google Sheet IDs
+just serve           # http://localhost:1313
+```
 
-- 👉 [**Get Started**](https://hugoblox.com/hugo-themes/)
-- 📚 [View the **documentation**](https://docs.hugoblox.com/)
-- 💬 [Chat with the **Wowchemy research community**](https://discord.gg/z8wNYzb) or [**Hugo community**](https://discourse.gohugo.io)
-- ⬇️ **Automatically import citations from BibTeX** with the [Hugo Academic CLI](https://github.com/GetRD/academic-file-converter)
-- 🐦 Share your new site with the community: [@wowchemy](https://twitter.com/wowchemy) [@GeorgeCushen](https://twitter.com/GeorgeCushen) [#MadeWithWowchemy](https://twitter.com/search?q=%23MadeWithWowchemy&src=typed_query)
-- 🗳 [Take the survey and help us improve #OpenSource](https://forms.gle/NioD9VhUg7PNmdCAA)
-- 🚀 [Contribute improvements](https://github.com/HugoBlox/hugo-blox-builder/blob/main/CONTRIBUTING.md) or [suggest improvements](https://github.com/HugoBlox/hugo-blox-builder/issues)
-- ⬆️ **Updating?** View the [Update Guide](https://docs.hugoblox.com/hugo-tutorials/update/) and [Release Notes](https://github.com/HugoBlox/hugo-blox-builder/releases)
+With direnv, `direnv allow` loads the shell automatically.
 
-## We ask you, humbly, to support this open source movement
+| Command | What it does |
+|---|---|
+| `just serve` / `just build` | Preview / production build |
+| `just authors` | Regenerate people pages from the sheet (`just authors-check` only compares) |
+| `just papers` | Create pages for new papers in the sheet (`just papers-dry` to preview) |
+| `just new-post "Title"` / `just new-event "Title" --date 2026-12-03` | New news / event page |
+| `just check-content` | Validate front matter, author references, leftover template text |
+| `just check` | Lint + content checks + full build (what CI runs on pull requests) |
 
-Today we ask you to defend the open source independence of the Wowchemy website builder and themes 🐧
+## Automation
 
-We're an open source movement that depends on your support to stay online and thriving, but 99.9% of our creators don't give; they simply look the other way.
+| Workflow | When | Does |
+|---|---|---|
+| `publish.yaml` | push to `main` | Build with Hugo 0.135.0, deploy to GitHub Pages |
+| `check.yml` | pull request | Ruff, content validation, build |
+| `sync-people.yml` | nightly + manual | Sheet -> `content/authors/`, opens a PR |
+| `sync-publications.yml` | nightly + manual | New sheet rows -> `content/publication/`, opens a PR |
 
-### [❤️ Click here to become a GitHub Sponsor, unlocking awesome perks such as _exclusive academic templates and widgets_](https://github.com/sponsors/gcushen)
+One-time repository setup: add the **variables** `SPAICOM_SHEET_ID`,
+`SPAICOM_PEOPLE_GID`, `SPAICOM_PUBLICATIONS_GID` (and optionally `CROSSREF_MAILTO`) under
+*Settings > Secrets and variables > Actions > Variables*, and enable *Settings > Actions >
+General > Allow GitHub Actions to create and approve pull requests*.
+The sheet must be viewable by "anyone with the link"; its ID is configuration, not a secret.
 
-## Demo credits
+## The publications tab
 
-Please replace the demo images with your own.
+Create a tab named "publications" and import [`templates/publications-sheet.csv`](templates/publications-sheet.csv) to get the right header (case-insensitive, extra columns ignored):
 
-- [Female scientist](https://unsplash.com/photos/uVnRa6mOLOM)
-- [2 Coders](https://unsplash.com/photos/kwzWjTnDPLk)
-- [Cafe](https://unsplash.com/photos/RnDGGnMEOao)
-- Blog posts
-  - https://unsplash.com/photos/AndE50aaHn4
-  - https://unsplash.com/photos/OYzbqk2y26c
-- Avatars
-  - https://unsplash.com/photos/5yENNRbbat4
-  - https://unsplash.com/photos/WNoLnJo7tS8
+`id, title, tags, featured, pdf_url, code_url, slides_url, video_url, project_url, dataset_url, poster_url, type, replaces, update, venue, venue_short, year, authors, abstract`
+
+Columns are ordered from most to least commonly filled. A row normally needs only `id` (DOI or arXiv ID). Metadata comes from Crossref, arXiv and
+OpenAlex. Papers without an identifier need `title`, `year`, `authors`, `type`
+(`conference`, `journal` or `preprint`).
+
+Two more columns control updates: `replaces` (the DOI, arXiv ID or folder of the page this
+row supersedes) and `update` (`yes` to re-fetch and refresh the page).
+
+**Updating a paper that is already on the site** (pages are edited in place; the body,
+curated abstract/authors, images and hand-added fields are kept; nothing is ever deleted):
+
+| You want to... | Do this in the sheet |
+|---|---|
+| Add a code/slides/video link, tags, or feature it | Fill the cell on the paper's row (an empty cell never clears a value) |
+| Mark a preprint as published | Add a row with the new DOI. The matching preprint page is upgraded (type, venue, DOI, date, `cite.bib`). If the title changed a lot, set `replaces` to the arXiv ID |
+| Fix wrong metadata or pick up a new abstract | Put `yes` in `update` on its row, then clear it |
+
+Possible duplicates (same title, nothing to upgrade) are reported in the PR, not written.
+
+## Credits
+
+Theme: [Hugo Blox / Wowchemy](https://github.com/HugoBlox/hugo-blox-builder) (MIT).
+Demo images in `assets/media/` should be replaced with the group's own.

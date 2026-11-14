@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(just:*)",
+      "Bash(uv run scripts/*)",
+      "Bash(uvx ruff:*)",
+      "Bash(hugo:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git branch:*)"
+    ],
+    "ask": [
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(gh pr create:*)"
+    ],
+    "deny": [
+      "Bash(git push --force:*)",
+      "Bash(git push -f:*)",
+      "Bash(git reset --hard:*)",
+      "Bash(git clean:*)",
+      "Edit(content/authors/**/_index.md)",
+      "Write(content/authors/**/_index.md)",
+      "Edit(public/**)",
+      "Write(public/**)"
+    ]
+  }
+}
