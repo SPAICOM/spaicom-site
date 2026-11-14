@@ -16,3 +16,12 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Local configuration and tooling
+.env
+.direnv/
+result
+.claude/settings.local.json
+
+# Working copy of the Google Sheet (contains members' contact details)
+*.xlsx
