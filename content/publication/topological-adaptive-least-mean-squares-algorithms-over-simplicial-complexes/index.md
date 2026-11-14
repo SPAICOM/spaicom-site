@@ -10,7 +10,7 @@ authors:
   - paolo-di-lorenzo
 
 date: '2025-05-29T00:00:00Z'
-doi: '10.23919/EUSIPCO63174.2024.10714988'
+doi: ''
 
 # Schedule page publish date (NOT publication's date).
 publishDate: '2025-05-29T00:00:00Z'
