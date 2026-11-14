@@ -1,0 +1,48 @@
+name: Sync people from Google Sheet
+
+# Regenerates content/authors/* from the Google Sheet and opens a pull request
+# when something changed. Nothing is published until a maintainer merges it.
+#
+# One-time setup:
+#   1. Settings > Secrets and variables > Actions > Variables: add
+#        SPAICOM_SHEET_ID, SPAICOM_PEOPLE_GID
+#   2. Settings > Actions > General > Workflow permissions: enable
+#        "Allow GitHub Actions to create and approve pull requests"
+
+on:
+  schedule:
+    - cron: '0 5 * * *' # every day at 05:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    if: github.repository_owner != 'HugoBlox'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: Generate author pages
+        env:
+          SPAICOM_SHEET_ID: ${{ vars.SPAICOM_SHEET_ID }}
+          SPAICOM_PEOPLE_GID: ${{ vars.SPAICOM_PEOPLE_GID }}
+        run: uv run scripts/populate_authors.py
+      - name: Validate content
+        run: uv run scripts/check_content.py
+      - name: Open pull request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          add-paths: content/authors
+          commit-message: 'content: sync people from Google Sheet'
+          title: 'Sync people from Google Sheet'
+          body: |
+            Automatic sync of `content/authors/` from the Google Sheet.
+
+            Review the diff: new members, changed roles/groups, removed rows.
+            Rows deleted from the sheet are **not** deleted here; remove the folder by hand if intended.
+          branch: sync/people
+          labels: automated-pr, content
+          delete-branch: true

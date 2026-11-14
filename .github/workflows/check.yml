@@ -1,0 +1,33 @@
+name: Check pull request
+
+# Runs on every pull request: Python lint, content validation and a full site build.
+
+env:
+  WC_HUGO_VERSION: '0.135.0' # keep in sync with publish.yaml and netlify.toml
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: Lint Python
+        run: |
+          uvx ruff check scripts src
+          uvx ruff format --check scripts src
+      - name: Validate content
+        run: uv run scripts/check_content.py
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: ${{ env.WC_HUGO_VERSION }}
+          extended: true
+      - name: Build site
+        run: hugo --gc --minify --destination "$(mktemp -d)"
