@@ -6,7 +6,7 @@ last_name: Avino
 
 superuser: false
 
-role: Ph.D. Student
+role: Ph.D. Student in Data Science
 
 organizations:
   - name: Sapienza University of Rome
@@ -27,10 +27,10 @@ social:
     link: 'mailto:'
   - icon: linkedin
     icon_pack: fab
-    link: 
+    link: https://www.linkedin.com/in/valeria-avino-for-ml/
   - icon: github
     icon_pack: fab
-    link: 
+    link: https://github.com/vaal4ds
   - icon: google-scholar
     icon_pack: ai
     link: 

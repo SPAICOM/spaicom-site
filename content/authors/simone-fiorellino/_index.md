@@ -6,7 +6,7 @@ last_name: Fiorellino
 
 superuser: false
 
-role: Ph.D. Student in Data Science
+role: Ph.D. in Data Science
 
 organizations:
   - name: Sapienza University of Rome
