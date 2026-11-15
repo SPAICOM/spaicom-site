@@ -60,7 +60,7 @@ active: true
 
 user_groups:
   
-  - Ph.D. Students
+  - Alumni
   
 ---
 
