@@ -7,3 +7,36 @@
 .cta-group {
   justify-content: center;
 }
+
+// ---- SPAICOM brand colours (from assets/media/icon.png) ----
+// SP = blue, AI = pink, COM = teal. Use <span class="wm">...</span> in text.
+$spaicom-blue: #477bff;
+$spaicom-pink: #e13d66;
+$spaicom-teal: #70d7d0;
+
+.wm {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.wm-sp { color: $spaicom-blue; }
+.wm-ai { color: $spaicom-pink; }
+.wm-com { color: $spaicom-teal; }
+
+// The teal is too light on a white background: darken it for the day theme.
+body:not(.dark) .wm-com { color: #3fb5ac; }
+
+.navbar-brand { font-weight: 700; }
+
+// ---- Font: Times New Roman everywhere (code blocks and icons keep their own fonts) ----
+// Visitors without Times New Roman (e.g. Linux) get the metric-compatible Liberation Serif / Tinos.
+$spaicom-serif: "Times New Roman", Times, "Liberation Serif", Tinos, serif;
+
+html,
+body,
+.navbar-light,
+h1, h2, h3, h4, h5, h6,
+.btn,
+.tooltip,
+.popover {
+  font-family: $spaicom-serif;
+}

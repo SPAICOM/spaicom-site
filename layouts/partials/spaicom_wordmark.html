@@ -1,0 +1,2 @@
+{{- /* Site name with the logo colours: SP blue, AI pink, COM teal. Used in the navbar. */ -}}
+<span class="wm"><span class="wm-sp">SP</span><span class="wm-ai">AI</span><span class="wm-com">COM</span></span>{{ with strings.TrimPrefix "SPAICOM" site.Title }}{{ . }}{{ end }}

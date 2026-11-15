@@ -8,13 +8,13 @@ sections:
   - block: hero
     content:
       title: |
-        Signal Processing and Artificial Intelligence for Communications
+        <span class="wm-sp">Signal Processing</span> and <span class="wm-ai">Artificial Intelligence</span> for <span class="wm-com">Communications</span>
       image:
         filename: welcome.jpg
       text: |
         <br>
         
-        **SPAICOM** is a research group at the Department of Information Engineering, Electronics, and Telecommunications of Sapienza University of Rome. We develop signal processing and machine learning methods for communication systems, with a focus on topological signal processing and topological deep learning, goal-oriented and semantic communications, and distributed and federated learning.
+        <span class="wm"><span class="wm-sp">SP</span><span class="wm-ai">AI</span><span class="wm-com">COM</span></span> is a research group at the Department of Information Engineering, Electronics, and Telecommunications of Sapienza University of Rome. We develop signal processing and machine learning methods for communication systems, with a focus on topological signal processing and topological deep learning, goal-oriented and semantic communications, and distributed and federated learning.
   
   - block: collection
     content:

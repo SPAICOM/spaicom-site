@@ -1,7 +1,8 @@
 name: Sync publications from Google Sheet
 
-# Creates a page for every new DOI / arXiv ID in the sheet's publications tab and
-# opens a pull request. Existing pages are never modified.
+# Optional: creates a page for every new DOI / arXiv ID in the sheet's publications tab (if
+# configured; with no tab it does nothing) and
+# opens a pull request. Existing pages are updated in place, never deleted.
 #
 # One-time setup: add the repository variables SPAICOM_SHEET_ID and
 # SPAICOM_PUBLICATIONS_GID (Settings > Secrets and variables > Actions > Variables)

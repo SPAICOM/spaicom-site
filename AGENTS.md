@@ -56,7 +56,8 @@ publications and posts; Hugo turns that into a link to the profile. A plain name
 | `just build` / `just check` | Production build / lint + content checks + build |
 | `just check-content` | Validate front matter, author slugs, placeholder text |
 | `just authors` / `just authors-check` | Regenerate / verify author pages from the sheet |
-| `just papers` / `just papers-dry` | Create pages for new rows in the sheet's publications tab |
+| `just papers` / `just papers-dry` | Apply the optional publications tab of the sheet |
+| `just discover` | Terminal UI: find new papers of active members and choose which to add (needs a real terminal) |
 | `just new-post "Title" [--author slug] [--date YYYY-MM-DD]` | New news page |
 | `just new-event "Title" --date YYYY-MM-DD [--location ...]` | New event page |
 
@@ -68,11 +69,12 @@ Google Sheet IDs. The Python scripts declare their own dependencies and run with
 
 - **People**: Google Sheet (tab "people") -> `scripts/populate_authors.py` + `templates/people.md` -> `content/authors/`.
   The nightly workflow `sync-people.yml` opens a pull request when the sheet changed.
-- **Publications**: Google Sheet (tab "publications": a DOI or arXiv ID per row) ->
-  `scripts/sync_publications.py` (Crossref / arXiv / OpenAlex) -> `content/publication/`.
-  Creates pages, and updates existing ones in place (sheet link/featured/tags columns, preprint ->
-  published via a matching title or the `replaces` column, `update=yes` to refresh metadata).
-  Never deletes. `sync-publications.yml` runs it nightly.
+- **Publications**: main route is `just discover` (`scripts/discover_papers.py`, OpenAlex, terminal UI)
+  -> pages in `content/publication/`; decisions are stored in `discovery/papers_reviewed.csv`.
+  Optional extra route: the sheet's "publications" tab, where only `id` (DOI or arXiv ID) is needed
+  -> `scripts/sync_publications.py` (Crossref / arXiv / OpenAlex); other columns add links, tags,
+  featured, preprint -> published upgrades. Both share the same page-writing code. Never deletes.
+  `sync-publications.yml` runs the tab nightly and does nothing when no tab is configured.
 - **Everything else** is edited directly in `content/`.
 - **Deploy**: merge to `main` -> `publish.yaml` builds with Hugo 0.135.0 -> GitHub Pages.
 
@@ -87,6 +89,6 @@ Google Sheet IDs. The Python scripts declare their own dependencies and run with
 ## Skills
 
 Task playbooks live in `.agents/skills/` (also visible at `.claude/skills/`):
-`add-publication`, `add-news-post`, `add-event`, `update-people`, `add-image`,
+`add-publication`, `discover-papers`, `add-news-post`, `add-event`, `update-people`, `add-image`,
 `edit-page-text`, `preview-and-check`, `submit-changes`, `fix-broken-build`.
 Read the matching one before starting a task.

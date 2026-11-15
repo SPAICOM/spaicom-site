@@ -34,7 +34,8 @@ With direnv, `direnv allow` loads the shell automatically.
 |---|---|
 | `just serve` / `just build` | Preview / production build |
 | `just authors` | Regenerate people pages from the sheet (`just authors-check` only compares) |
-| `just papers` | Create pages for new papers in the sheet (`just papers-dry` to preview) |
+| `just papers` | Apply the optional publications tab (`just papers-dry` to preview) |
+| `just discover` | Terminal screen: find new papers by active members (OpenAlex), choose add / featured / discard |
 | `just new-post "Title"` / `just new-event "Title" --date 2026-12-03` | New news / event page |
 | `just check-content` | Validate front matter, author references, leftover template text |
 | `just check` | Lint + content checks + full build (what CI runs on pull requests) |
@@ -46,23 +47,28 @@ With direnv, `direnv allow` loads the shell automatically.
 | `publish.yaml` | push to `main` | Build with Hugo 0.135.0, deploy to GitHub Pages |
 | `check.yml` | pull request | Ruff, content validation, build |
 | `sync-people.yml` | nightly + manual | Sheet -> `content/authors/`, opens a PR |
-| `sync-publications.yml` | nightly + manual | New sheet rows -> `content/publication/`, opens a PR |
+| `sync-publications.yml` | nightly + manual | Optional publications tab -> `content/publication/`, opens a PR |
 
 One-time repository setup: add the **variables** `SPAICOM_SHEET_ID`,
-`SPAICOM_PEOPLE_GID`, `SPAICOM_PUBLICATIONS_GID` (and optionally `CROSSREF_MAILTO`) under
+`SPAICOM_PEOPLE_GID` (and optionally `SPAICOM_PUBLICATIONS_GID`, `CROSSREF_MAILTO`) under
 *Settings > Secrets and variables > Actions > Variables*, and enable *Settings > Actions >
 General > Allow GitHub Actions to create and approve pull requests*.
 The sheet must be viewable by "anyone with the link"; its ID is configuration, not a secret.
 
-## The publications tab
+## The publications tab (optional)
 
-Create a tab named "publications" and import [`templates/publications-sheet.csv`](templates/publications-sheet.csv) to get the right header (case-insensitive, extra columns ignored):
+New papers are normally added with `just discover` (see below). The "publications" tab is
+optional and only needed for extras. Fill the first four columns: `id` (a DOI or arXiv ID,
+the only one the script cannot work without), `pdf_url`, `code_url` and `type`
+(`conference`, `journal` or `preprint`; guessed if blank). Every other column is marked
+`(Optional)`. Import [`templates/publications-sheet.csv`](templates/publications-sheet.csv)
+to get the header (a trailing ` (Optional)`, case and extra columns are ignored).
 
-`id, title, tags, featured, pdf_url, code_url, slides_url, video_url, project_url, dataset_url, poster_url, type, replaces, update, venue, venue_short, year, authors, abstract`
-
-Columns are ordered from most to least commonly filled. A row normally needs only `id` (DOI or arXiv ID). Metadata comes from Crossref, arXiv and
-OpenAlex. Papers without an identifier need `title`, `year`, `authors`, `type`
-(`conference`, `journal` or `preprint`).
+With just a DOI the page is created from Crossref / arXiv / OpenAlex. The optional columns
+add what the tool cannot know: `slides_url`, `video_url`, `project_url`, `dataset_url`,
+`poster_url`, `tags`, `featured`, or the fields for papers without an identifier (`title`,
+`year`, `authors`, `venue`, `abstract`). Without the tab (no `SPAICOM_PUBLICATIONS_GID`
+variable) the nightly sync simply does nothing.
 
 Two more columns control updates: `replaces` (the DOI, arXiv ID or folder of the page this
 row supersedes) and `update` (`yes` to re-fetch and refresh the page).
@@ -82,3 +88,12 @@ Possible duplicates (same title, nothing to upgrade) are reported in the PR, not
 
 Theme: [Hugo Blox / Wowchemy](https://github.com/HugoBlox/hugo-blox-builder) (MIT).
 Demo images in `assets/media/` should be replaced with the group's own.
+
+## Finding new papers (optional)
+
+`just discover` lists papers by active members that are not on the site yet. Mark each
+one in the terminal (`a` add, `f` add as featured, `d` discard, `w` apply). Added papers
+become pages like the sheet-driven ones, and every decision is stored in
+`discovery/papers_reviewed.csv` so nothing is offered twice. `discovery/discovery.toml` sets
+the start date and the co-author rule (for example "Barbarossa or Di Lorenzo must be an
+author"). Commit `content/publication/` and `discovery/` afterwards.

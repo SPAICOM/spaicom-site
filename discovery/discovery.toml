@@ -1,0 +1,9 @@
+# Settings for scripts/discover_papers.py (run with `just discover`)
+
+# Only list papers published on or after this date (avoids a member's whole career).
+since = "2023-01-01"
+
+# A paper is listed only if at least one of these people is a co-author
+# (profile folder names in content/authors/). Use [] to disable the rule.
+# In the review screen, press `r` to temporarily show papers that fail the rule.
+require_any_coauthor = ["sergio-barbarossa", "paolo-di-lorenzo"]

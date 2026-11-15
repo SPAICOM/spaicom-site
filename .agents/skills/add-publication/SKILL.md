@@ -5,10 +5,12 @@ description: Add a paper (conference, journal or preprint) to the Publications p
 
 # Add a publication
 
-The source of truth is the **publications tab of the Google Sheet**. New rows create pages;
-rows for papers already on the site update them **in place** (links, tags, featured, and
-preprint -> published upgrades). Nothing is deleted, and body text, curated abstracts/authors
-and images are kept.
+There are two routes. **`just discover`** (see the `discover-papers` skill) finds new papers
+of active members and creates the pages after a human picks them in a terminal screen.
+The optional **publications tab** of the Google Sheet needs only a DOI or arXiv ID per row;
+extra columns add links/tags/featured. Existing pages are updated **in place** (links, tags,
+featured, preprint -> published upgrades). Nothing is deleted; body text, curated
+abstracts/authors and images are kept.
 
 ## Steps
 
@@ -16,13 +18,12 @@ and images are kept.
    arXiv ID (`2403.12345`). A pasted URL is fine. If they only have a title, search for
    the DOI and confirm the match with them. Do not guess.
 2. **Choose the route:**
-   - *Normal*: tell the user to add a row to the publications tab with the `id` (and
-     optionally `featured`, `tags`, `code_url`, `slides_url`, `video_url`, `project_url`,
-     `pdf_url`). The nightly sync opens a pull request, or you can run step 3 now.
+   - *Normal*: tell the user to add a row to the publications tab with the `id` plus `pdf_url`, `code_url` and `type` (and,
+     only if wanted, `featured`, `tags`, `slides_url`, `video_url`, `project_url`.
+     The nightly sync opens a pull request, or you can run step 3 now.
    - *Quick, from this machine*: write a one-row CSV (header `id,type,featured,tags,code_url,...`)
      in a temp file and run `uv run scripts/sync_publications.py --csv <file>`. Use this when
-     the user wants it now and has no access to the sheet. Remind them to also add the row
-     to the sheet so it is not lost, because the sheet is the master list.
+     the user wants it now and has no access to the sheet. 
    - *No DOI/arXiv* (workshop, thesis, report): rows may use `title`, `venue`, `year`,
      `authors` ("Given Family; Given Family") and `type` (`conference|journal|preprint`) instead of `id`.
 3. **Run `just papers-dry` first**, read the report, then `just papers`.

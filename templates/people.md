@@ -15,13 +15,13 @@ organizations:
 bio: {{short_bio}}
 
 interests:
-  {% for item in interests %}
+  {% for item in interests or [] %}
   - {{item}}
   {% endfor %}
 
 education:
   courses:
-  {% for item in education %}
+  {% for item in education or [] %}
     - course: {{item.course}}
       institution: {{item.institution}}
       year: {{item.year}}
@@ -44,6 +44,9 @@ social:
 email: '{{email_for_gravatar}}'
 
 highlight_name: {{highlight_name}}
+
+# Still takes part in the lab (an alumnus can be active); read by the paper-discovery tool
+active: {{active}}
 
 user_groups:
   {% for group in user_groups %}

@@ -34,6 +34,10 @@ authors-check:
 
 # ------------------------------------------------------------ publications ---
 
+# Find new papers of active members (OpenAlex) and pick which to add, in a terminal UI
+discover *ARGS:
+    uv run scripts/discover_papers.py {{ARGS}}
+
 # Create pages for new rows of the sheet's publications tab (writes files)
 papers:
     uv run scripts/sync_publications.py

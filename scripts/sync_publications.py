@@ -7,9 +7,10 @@
 # ]
 # ///
 """
-Create publication pages from the "publications" tab of the Google Sheet.
+Create or update publication pages from the (optional) "publications" tab of the Google Sheet.
+New papers are normally added with `just discover`; this tab is for extras.
 
-A member only has to add a row with a DOI or an arXiv ID. For every row whose
+A row needs `id` (a DOI or an arXiv ID); `pdf_url`, `code_url` and `type` are the other columns to fill. For every row whose
 paper is not on the site yet, this script
 
   1. fetches the metadata (Crossref for DOIs, arXiv for arXiv IDs),
@@ -55,7 +56,7 @@ Updates (what happens to a paper that is already on the site):
 Configuration (environment variables, see .env.example):
 
   SPAICOM_SHEET_ID             Google Sheet ID
-  SPAICOM_PUBLICATIONS_GID     GID of the publications tab
+  SPAICOM_PUBLICATIONS_GID     GID of the publications tab (optional: no tab, nothing to do)
   CROSSREF_MAILTO              optional; puts requests in Crossref's "polite pool"
 """
 
@@ -132,18 +133,31 @@ def split_list(value: str) -> list[str]:
     return [v.strip() for v in (value or "").split(";") if v.strip()]
 
 
+_last_arxiv_call = 0.0
+
+
 def http_get(
-    url: str, *, headers: dict | None = None, retries: int = 3
+    url: str, *, headers: dict | None = None, retries: int = 4
 ) -> requests.Response:
+    global _last_arxiv_call
     headers = {"User-Agent": "spaicom-site-sync", **(headers or {})}
     last: Exception | None = None
     for attempt in range(retries):
+        if "arxiv.org" in url:  # arXiv asks for at most one request every 3 seconds
+            wait = 3.0 - (time.monotonic() - _last_arxiv_call)
+            if wait > 0:
+                time.sleep(wait)
+            _last_arxiv_call = time.monotonic()
         try:
             resp = requests.get(url, headers=headers, timeout=30, allow_redirects=True)
             if resp.status_code in (429, 500, 502, 503, 504):
-                raise requests.HTTPError(f"HTTP {resp.status_code}")
+                retry_after = resp.headers.get("Retry-After", "")
+                delay = int(retry_after) if retry_after.isdigit() else 5 * (attempt + 1)
+                last = requests.HTTPError(f"HTTP {resp.status_code}")
+                time.sleep(min(delay, 30))
+                continue
             return resp
-        except requests.RequestException as exc:  # network error or retryable status
+        except requests.RequestException as exc:  # network error
             last = exc
             time.sleep(2 * (attempt + 1))
     raise RuntimeError(f"Could not reach {url}: {last}")
@@ -864,6 +878,13 @@ def process_row(
     )
 
 
+def _column_name(header: str | None) -> str:
+    """'Pdf_url (Optional)' -> 'pdf_url': the sheet may label optional columns."""
+    return re.sub(
+        r"\s*\(optional\)\s*$", "", (header or "").strip(), flags=re.I
+    ).lower()
+
+
 def read_rows(args: argparse.Namespace) -> list[dict]:
     if args.csv:
         raw = args.csv.read_bytes()
@@ -871,15 +892,15 @@ def read_rows(args: argparse.Namespace) -> list[dict]:
         sheet_id = os.environ.get("SPAICOM_SHEET_ID")
         gid = os.environ.get("SPAICOM_PUBLICATIONS_GID")
         if not sheet_id or not gid:
-            sys.exit(
-                "Set SPAICOM_SHEET_ID and SPAICOM_PUBLICATIONS_GID (see .env.example), or pass --csv."
+            # The publications tab is optional: papers are normally added with
+            # `just discover`. Without a tab there is simply nothing to sync.
+            print(
+                "No publications tab configured (SPAICOM_PUBLICATIONS_GID): nothing to sync."
             )
+            return []
         raw = download_sheet_as_csv(sheet_id, int(gid))
     reader = csv.DictReader(io.StringIO(raw.decode("utf-8-sig")))
-    return [
-        {(k or "").strip().lower(): (v or "").strip() for k, v in r.items()}
-        for r in reader
-    ]
+    return [{_column_name(k): (v or "").strip() for k, v in r.items()} for r in reader]
 
 
 def main() -> None:

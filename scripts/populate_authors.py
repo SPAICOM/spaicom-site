@@ -175,6 +175,46 @@ def main():
         schema_overrides={"superuser": pl.String, "highlight_name": pl.String},
     )
 
+    # Headers may be labelled "role (Optional)" in the sheet; ignore the label and case.
+    df = df.rename(
+        {
+            c: re.sub(r"\s*\(optional\)\s*$", "", c.strip(), flags=re.I).lower()
+            for c in df.columns
+        }
+    )
+    # `title` (display name) defaults to "First Last"; the two flags default to false.
+    defaults = {
+        "title": pl.concat_str(
+            ["first_name", "last_name"], separator=" ", ignore_nulls=True
+        )
+        if {"first_name", "last_name"} <= set(df.columns)
+        else pl.lit(""),
+        "superuser": pl.lit("false"),
+        "highlight_name": pl.lit("false"),
+        "active": pl.lit("yes"),  # still takes part in the lab (alumni may too)
+    }
+    for col, default in defaults.items():
+        if col not in df.columns:
+            df = df.with_columns(default.alias(col))
+        else:
+            df = df.with_columns(
+                pl.when(pl.col(col).fill_null("").str.strip_chars() == "")
+                .then(default)
+                .otherwise(pl.col(col))
+                .alias(col)
+            )
+
+    df = df.with_columns(
+        pl.col("active")
+        .str.strip_chars()
+        .str.to_lowercase()
+        .is_in(["no", "n", "false", "0"])
+        .not_()
+        .cast(pl.String)
+        .str.to_lowercase()
+        .alias("active")
+    )
+
     problems = validate(df)
     if problems:
         print("The people sheet has problems, nothing was written:", file=sys.stderr)

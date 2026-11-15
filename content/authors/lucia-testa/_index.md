@@ -49,6 +49,9 @@ email: ''
 
 highlight_name: false
 
+# Still takes part in the lab (an alumnus can be active); read by the paper-discovery tool
+active: true
+
 user_groups:
   
   - Alumni

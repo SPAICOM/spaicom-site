@@ -1,0 +1,28 @@
+# SPAICOM colour theme, taken from the logo (assets/media/icon.png):
+#   blue #477BFF  ("SP")   pink #E13D66  ("AI")   teal #70D7D0  ("COM")   black #0A0A0A
+name = "SPAICOM"
+
+[light]
+  primary = "#3A68E8"        # logo blue, darkened a little for text contrast on white
+
+  menu_primary = "#fff"
+  menu_text = "#0A0A0A"
+  menu_text_active = "#E13D66"
+  menu_title = "#0A0A0A"
+
+  home_section_odd = "rgb(255, 255, 255)"
+  home_section_even = "rgb(246, 248, 249)"
+
+[dark]
+  primary = "#70D7D0"
+
+  link = "#70D7D0"
+  link_hover = "#9BE6E1"
+
+  menu_primary = "#0A0A0A"
+  menu_text = "#f0f0f0"
+  menu_text_active = "#70D7D0"
+  menu_title = "#f0f0f0"
+
+  home_section_odd = "#0A0A0A"
+  home_section_even = "#141414"

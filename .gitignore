@@ -25,3 +25,4 @@ result
 
 # Working copy of the Google Sheet (contains members' contact details)
 *.xlsx
+.hugo_build.lock

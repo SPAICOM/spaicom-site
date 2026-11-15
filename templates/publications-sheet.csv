@@ -1,2 +1,2 @@
-id,title,tags,featured,pdf_url,code_url,slides_url,video_url,project_url,dataset_url,poster_url,type,replaces,update,venue,venue_short,year,authors,abstract
-10.1109/ICASSP48485.2024.10446693,,Topological Signal Processing; Over-the-Air Computation,yes,,,,,,,,,,,,,,,
+id,pdf_url,code_url,type,title (Optional),tags (Optional),featured (Optional),slides_url (Optional),video_url (Optional),project_url (Optional),dataset_url (Optional),poster_url (Optional),update (Optional),replaces (Optional),venue (Optional),venue_short (Optional),year (Optional),authors (Optional),abstract (Optional)
+10.1109/ICASSP48485.2024.10446693,,,,,"Topological Signal Processing; Over-the-Air Computation",yes,,,,,,,,,,,,
