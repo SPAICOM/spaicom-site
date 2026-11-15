@@ -254,13 +254,44 @@ def fetch_openalex_abstract(doi: str) -> str:
     return " ".join(words[i] for i in sorted(words))
 
 
+def format_bibtex(text: str) -> str:
+    """Re-emit one BibTeX entry with one field per line (doi.org returns a single line).
+
+    Entries that are already multi-line, or that cannot be parsed, are returned unchanged.
+    """
+    text = text.strip()
+    m = re.match(r"^@(\w+)\s*\{\s*([^,\s]*)\s*,(.*)\}\s*$", text, re.DOTALL)
+    if not m or "\n" in text:
+        return text + "\n" if text else text
+    kind, key, body = m.groups()
+    fields, depth, quoted, cur = [], 0, False, ""
+    for ch in body:
+        if ch == '"' and depth == 0:
+            quoted = not quoted
+        elif ch == "{" and not quoted:
+            depth += 1
+        elif ch == "}" and not quoted:
+            depth -= 1
+        if ch == "," and depth == 0 and not quoted:
+            fields.append(cur.strip())
+            cur = ""
+        else:
+            cur += ch
+    if cur.strip():
+        fields.append(cur.strip())
+    if depth != 0 or quoted or not fields:
+        return text + "\n"
+    lines = ",\n".join(f"  {f}" for f in fields)
+    return f"@{kind}{{{key},\n{lines}\n}}\n"
+
+
 def fetch_doi_bibtex(doi: str) -> str:
     try:
         resp = http_get(
             f"https://doi.org/{doi}", headers={"Accept": "application/x-bibtex"}
         )
         if resp.status_code == 200 and resp.text.strip().startswith("@"):
-            return resp.text.strip() + "\n"
+            return format_bibtex(resp.text)
     except RuntimeError:
         pass
     return ""
