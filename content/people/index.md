@@ -7,7 +7,7 @@ type: landing
 sections:
   - block: people
     content:
-      title: Meet the SPAICOMers!
+      title: Meet the <span class="wm"><span class="wm-sp">SP</span><span class="wm-ai">AI</span><span class="wm-com">COM</span></span>ers!
       # Choose which groups/teams of users to display.
       #   Edit `user_groups` in each user's profile to add them to one or more of these groups.
       user_groups:
