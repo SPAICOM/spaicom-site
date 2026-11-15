@@ -60,3 +60,4 @@ user_groups:
   
 ---
 
+Mario Edoardo Pandolfo is a second-year PhD student in the Department of Computer, Control and Management Engineering (DIAG) at Sapienza University of Rome, where he also completed his M.Sc. in Data Science and his B.Sc. in Computer and Control Engineering. His research spans deep learning, topological signal processing, computational linguistics, and computational sociology, with a focus on how meaning is structured and conveyed in human and machine communication. He collaborates with CDCS and SPAICOM, two research labs at Sapienza University of Rome, and has worked with the National Inter-University Consortium for Telecommunications (CNIT) on the European 6G-GOALS project.
