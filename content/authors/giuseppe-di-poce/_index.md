@@ -6,19 +6,29 @@ last_name: Di Poce
 
 superuser: false
 
-role: 
+role: Ph.D Student at École Doctorale Mathématiques, Sciences et Technologies de l'Information UGA
 
 organizations:
-  - name: 
-    url: ''
+  - name: Commissariat a l'Energie Atomique et aux Energies Alternatives
+    url: 'https://www.leti-cea.fr/cea-tech/leti'
 
-bio: 
+bio: My research interests include Semantic Communications, information theory, and distributed optimization.
 
 interests:
+  
+  - Semantic Communications and Deep Learning
   
 
 education:
   courses:
+  
+    - course: M.Sc. in Data Science 
+      institution:  Sapienza University of Rome 
+      year:  2024
+  
+    - course:  
+      institution: None
+      year: None
   
 
 social:
@@ -30,7 +40,7 @@ social:
     link: https://www.linkedin.com/in/di-poce-giuseppe/
   - icon: github
     icon_pack: fab
-    link: 
+    link: https://github.com/giuseppedipoce
   - icon: google-scholar
     icon_pack: ai
     link: https://scholar.google.com/citations?user=W-Ytru4AAAAJ
@@ -48,3 +58,4 @@ user_groups:
   
 ---
 
+Giuseppe Di Poce received his M.Sc. degree in Data Science (summa cum laude) from Sapienza University of Rome, Italy, in 2024. He is currently a Ph.D. student at the MSTII Doctoral School of Université Grenoble Alpes, France, working at CEA-Leti under the supervision of Dr. Emilio Calvanese Strinati and Prof. Paolo Di Lorenzo. His research focuses on semantic and goal-oriented communications for next-generation 6G wireless networks, with particular emphasis on multi-user semantic communications and distributed optimization. 
