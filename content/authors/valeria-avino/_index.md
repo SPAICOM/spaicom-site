@@ -24,7 +24,7 @@ education:
 social:
   - icon: envelope
     icon_pack: fas
-    link: 'mailto:'
+    link: 'mailto:valeria.avino@uniroma1.it'
   - icon: linkedin
     icon_pack: fab
     link: https://www.linkedin.com/in/valeria-avino-for-ml/
