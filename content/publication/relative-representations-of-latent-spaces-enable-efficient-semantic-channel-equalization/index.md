@@ -29,7 +29,7 @@ summary: ""
 tags:
  - Goal-oriented Semantic Communications
 
-featured: false
+featured: true
 
 # links:
 # - name: ""

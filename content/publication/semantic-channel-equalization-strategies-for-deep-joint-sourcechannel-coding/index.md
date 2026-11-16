@@ -14,10 +14,15 @@ publication: "In *2025 IEEE Globecom Workshops (GC Wkshps)*"
 publication_short: ""
 abstract: "Deep joint source-channel coding (DeepJSCC) has emerged as a powerful paradigm for end-to-end semantic communications, jointly learning to compress and protect task-relevant features over noisy channels. However, existing DeepJSCC schemes assume a shared latent space at transmitter (TX) and receiver (RX) - an assumption that fails in multi-vendor deployments where encoders and decoders cannot be co-trained. This mismatch introduces \"semantic noise\", degrading reconstruction quality and downstream task performance. In this paper, we systematize and evaluate methods for semantic channel equalization for DeepJSCC, introducing an additional processing stage that aligns heterogeneous latent spaces under both physical and semantic impairments. We investigate three classes of aligners: (i) linear maps, which admit closed-form solutions; (ii) lightweight neural networks, offering greater expressiveness; and (iii) a Parseval-frame equalizer, which operates in zero-shot mode without the need for training. Through extensive experiments on image reconstruction over AWGN and fading channels, we quantify trade-offs among complexity, data efficiency, and fidelity, providing guidelines for deploying DeepJSCC in heterogeneous AI-native wireless networks."
 summary: ''
-tags: []
+tags:
+  - "AI-native Communication"
+  - "DJSCC"
+  - "Latent Space Alignment"
+  - "Semantic Communication"
+  - "Semantic Equalization"
 featured: true
-url_pdf: ""
-url_code: ""
+url_pdf: "https://arxiv.org/pdf/2510.046744"
+url_code: "https://github.com/SPAICOM/DJSCC-Semantic-Equalization"
 url_dataset: ""
 url_poster: ""
 url_project: ""
