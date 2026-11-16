@@ -14,6 +14,16 @@ default:
 serve:
     hugo server --buildDrafts --buildFuture --navigateToChanged
 
+# Preview reachable from your other devices over Tailscale (http://<tailscale-ip>:1313)
+serve-remote:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    # Hugo comes from the Nix dev shell: enter it if this shell does not have it yet.
+    command -v hugo >/dev/null || exec nix develop -c just serve-remote
+    ip=$(tailscale ip -4 | head -n1)
+    echo "Open http://$ip:1313/ from any device on your tailnet"
+    hugo server --buildDrafts --buildFuture --bind "$ip" --port 1313 --baseURL "http://$ip:1313/" --appendPort=false
+
 # Build the production site into ./public
 build:
     hugo --gc --minify
