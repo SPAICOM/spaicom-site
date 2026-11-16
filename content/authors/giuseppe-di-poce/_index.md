@@ -26,9 +26,9 @@ education:
       institution:  Sapienza University of Rome 
       year:  2024
   
-    - course:  
-      institution: None
-      year: None
+    - course:  B.Sc. in Economics and Management 
+      institution:  Universita' degli Studi di Cassino 
+      year:  2022
   
 
 social:

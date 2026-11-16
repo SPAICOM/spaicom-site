@@ -6,11 +6,11 @@ last_name: Battiloro
 
 superuser: false
 
-role: Postdoctoral Fellow
+role: Assistant Professor
 
 organizations:
-  - name: Harvard University
-    url: 'https://hsph.harvard.edu/profile/claudio-battiloro/'
+  - name: Brown University
+    url: 'https://www.brown.edu/'
 
 bio: My research interests include theory and methods for topological signal processing and deep learning, AI for healthy climate adaptation, and distributed stochastic optimization. 
 
