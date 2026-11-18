@@ -16,7 +16,9 @@ bio: My research interests include Semantic Communications, information theory, 
 
 interests:
   
-  - Semantic Communications and Deep Learning
+  - Semantic Communications
+  
+  - Deep Learning
   
 
 education:

@@ -16,7 +16,9 @@ bio:
 
 interests:
   
-  - Multi-Agent Cooperation, Generative AI
+  - Multi-Agent Cooperation
+  
+  - Generative AI
   
 
 education:
