@@ -37,6 +37,7 @@ jobs:
       - name: Validate content
         run: uv run scripts/check_content.py
       - name: Open pull request
+        id: cpr
         uses: peter-evans/create-pull-request@v6
         with:
           add-paths: content/publication
@@ -46,3 +47,12 @@ jobs:
           branch: sync/publications
           labels: automated-pr, content
           delete-branch: true
+      - name: Enable auto-merge
+        # No-op until a PAT/App token is wired into the checkout/create-pull-request
+        # steps above: PRs opened with the default GITHUB_TOKEN don't trigger the
+        # "check" workflow, so the required status never arrives and this PR will
+        # just sit waiting instead of merging.
+        if: steps.cpr.outputs.pull-request-number
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh pr merge --auto --squash "${{ steps.cpr.outputs.pull-request-number }}"

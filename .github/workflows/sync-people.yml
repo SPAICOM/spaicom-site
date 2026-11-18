@@ -1,7 +1,8 @@
 name: Sync people from Google Sheet
 
 # Regenerates content/authors/* from the Google Sheet and opens a pull request
-# when something changed. Nothing is published until a maintainer merges it.
+# when something changed. The PR auto-merges once the "check" status passes
+# (branch protection on main requires it); nothing is published if checks fail.
 #
 # One-time setup:
 #   1. Settings > Secrets and variables > Actions > Variables: add
@@ -33,6 +34,7 @@ jobs:
       - name: Validate content
         run: uv run scripts/check_content.py
       - name: Open pull request
+        id: cpr
         uses: peter-evans/create-pull-request@v6
         with:
           add-paths: content/authors
@@ -43,6 +45,12 @@ jobs:
 
             Review the diff: new members, changed roles/groups, removed rows.
             Rows deleted from the sheet are **not** deleted here; remove the folder by hand if intended.
+            This PR auto-merges once CI passes.
           branch: sync/people
           labels: automated-pr, content
           delete-branch: true
+      - name: Enable auto-merge
+        if: steps.cpr.outputs.pull-request-number
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh pr merge --auto --squash "${{ steps.cpr.outputs.pull-request-number }}"
