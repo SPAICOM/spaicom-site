@@ -8,28 +8,28 @@ sections:
   - block: slider
     content:
       slides:
-      - title: 👋 Welcome to the group
-        content: Take a look at what we're working on...
+      - title: 👋 Welcome to SPAICOM
+        content: Signal Processing and Artificial Intelligence for Communications. Take a look at what we're working on.
         align: center
         background:
           image:
-            filename: coders.jpg
+            filename: icassp-2026.jpg
             filters:
               brightness: 0.7
           position: right
           color: '#666'
-      - title: Lunch & Learn ☕️
-        content: 'Share your knowledge with the group and explore exciting new topics together!'
+      - title: A Team at Conferences Worldwide 🌍
+        content: 'From Rome to Barcelona, Madrid, Rio de Janeiro and beyond, we regularly present our work at top signal processing and AI conferences.'
         align: left
         background:
           image:
-            filename: contact.jpg
+            filename: lab-team-2025.jpg
             filters:
               brightness: 0.7
           position: center
           color: '#555'
-      - title: World-Class Semiconductor Lab
-        content: 'Just opened last month!'
+      - title: Signal Processing & AI for Communications
+        content: 'We work on topological signal processing, semantic communications, and distributed learning at Sapienza University of Rome.'
         align: right
         background:
           image:

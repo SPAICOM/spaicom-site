@@ -58,6 +58,9 @@ Write the news here (Markdown).
 
 def event(a: argparse.Namespace, iso: str) -> str:
     end = a.end_date or a.date
+    authors = (
+        "\n" + "\n".join(f"  - {x}" for x in a.author) if a.author else "[]"
+    )
     return f"""---
 title: {q(a.title)}
 event: {q(a.event_name)}
@@ -75,7 +78,7 @@ date: '{iso}'
 date_end: '{end}T00:00:00Z'
 all_day: true
 publishDate: '{iso}'
-authors: []
+authors: {authors}
 tags: []
 featured: false
 url_code: ''

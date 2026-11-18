@@ -50,7 +50,7 @@ sections:
       columns: '1'
       background:
         image: 
-          filename: contact.jpg
+          filename: lab-team-2025.jpg
           filters:
             brightness: 1
           parallax: false
