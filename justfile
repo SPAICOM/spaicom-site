@@ -74,8 +74,8 @@ check-content:
 
 # Python lint and format check
 lint:
-    uvx ruff check scripts src
-    uvx ruff format --check scripts src
+    uvx ruff@0.17.5 check scripts src
+    uvx ruff@0.17.5 format --check scripts src
 
 # Everything CI runs: lint, content checks and a full site build
 check: lint check-content

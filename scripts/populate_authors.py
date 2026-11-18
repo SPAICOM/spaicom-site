@@ -178,7 +178,9 @@ def main():
     # Headers may be labelled "role (Optional)" in the sheet; ignore the label and case.
     df = df.rename(
         {
-            c: re.sub(r"\s*\(optional\)\s*$", "", c.strip(), flags=re.I).lower()
+            c: re.sub(
+                r"\s*\(optional\)\s*$", "", c.strip(), flags=re.IGNORECASE
+            ).lower()
             for c in df.columns
         }
     )
