@@ -39,9 +39,10 @@ import urllib.parse
 from dataclasses import dataclass, field
 from datetime import date
 from pathlib import Path
+from typing import ClassVar
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-import sync_publications as sp  # noqa: E402
+import sync_publications as sp
 
 OPENALEX = "https://api.openalex.org"
 DATA = Path("discovery")
@@ -377,7 +378,7 @@ def make_app(cands: list[Candidate], cfg: Config):
         DataTable { height: 1fr; }
         #detail { height: 8; padding: 0 1; border-top: solid $accent; }
         """
-        BINDINGS = [
+        BINDINGS: ClassVar = [
             Binding("a", "mark('add')", "Add"),
             Binding("f", "mark('featured')", "Add+featured"),
             Binding("d", "mark('discard')", "Discard"),
@@ -425,7 +426,7 @@ def make_app(cands: list[Candidate], cfg: Config):
             self.show_detail()
 
         def summary(self) -> str:
-            n = lambda s: sum(1 for c in cands if c.status == s)  # noqa: E731
+            n = lambda s: sum(1 for c in cands if c.status == s)
             hidden = sum(1 for c in cands if not c.rule_ok) if self.rules_on else 0
             rules = "rules ON" if self.rules_on else "rules OFF"
             return (

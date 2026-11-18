@@ -912,7 +912,7 @@ def process_row(
 def _column_name(header: str | None) -> str:
     """'Pdf_url (Optional)' -> 'pdf_url': the sheet may label optional columns."""
     return re.sub(
-        r"\s*\(optional\)\s*$", "", (header or "").strip(), flags=re.I
+        r"\s*\(optional\)\s*$", "", (header or "").strip(), flags=re.IGNORECASE
     ).lower()
 
 

@@ -20,8 +20,8 @@ jobs:
       - uses: astral-sh/setup-uv@v5
       - name: Lint Python
         run: |
-          uvx ruff check scripts src
-          uvx ruff format --check scripts src
+          uvx ruff@0.17.5 check scripts src
+          uvx ruff@0.17.5 format --check scripts src
       - name: Validate content
         run: uv run scripts/check_content.py
       - name: Setup Hugo
