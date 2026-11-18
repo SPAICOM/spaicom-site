@@ -11,15 +11,28 @@ default:
 # ---------------------------------------------------------------- preview ---
 
 # Preview the site at http://localhost:1313 (drafts and future-dated items included)
-serve:
+# Usage: just serve [nix=auto|yes|no]  (the "nix=" prefix is optional, e.g. `just serve yes` also works)
+#   auto (default): enters the Nix dev shell only if `hugo` isn't already on PATH
+#   yes: forces the Nix dev shell
+#   no: forces plain `hugo` (fails if it isn't installed)
+serve nix="auto":
+    #!/usr/bin/env bash
+    set -euo pipefail
+    nix="{{nix}}"; nix="${nix#nix=}"
+    if [ "$nix" = yes ] || { [ "$nix" = auto ] && ! command -v hugo >/dev/null; }; then
+        exec nix develop -c just serve nix=no
+    fi
     hugo server --buildDrafts --buildFuture --navigateToChanged
 
 # Preview reachable from your other devices over Tailscale (http://<tailscale-ip>:1313)
-serve-remote:
+# Usage: just serve-remote [nix=auto|yes|no] -- same as `serve`, see above.
+serve-remote nix="auto":
     #!/usr/bin/env bash
     set -euo pipefail
-    # Hugo comes from the Nix dev shell: enter it if this shell does not have it yet.
-    command -v hugo >/dev/null || exec nix develop -c just serve-remote
+    nix="{{nix}}"; nix="${nix#nix=}"
+    if [ "$nix" = yes ] || { [ "$nix" = auto ] && ! command -v hugo >/dev/null; }; then
+        exec nix develop -c just serve-remote nix=no
+    fi
     ip=$(tailscale ip -4 | head -n1)
     echo "Open http://$ip:1313/ from any device on your tailnet"
     hugo server --buildDrafts --buildFuture --bind "$ip" --port 1313 --baseURL "http://$ip:1313/" --appendPort=false
