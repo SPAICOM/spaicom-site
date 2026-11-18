@@ -16,9 +16,19 @@ bio:
 
 interests:
   
+  - Multi-Agent Cooperation, Generative AI
+  
 
 education:
   courses:
+  
+    - course: M.Sc. in Data Science 
+      institution:  Sapienza University of Rome 
+      year:  2026
+  
+    - course:  B.Sc. in Mathematics 
+      institution:  Sapienza University of Rome 
+      year:  2023
   
 
 social:
@@ -33,7 +43,7 @@ social:
     link: https://github.com/vaal4ds
   - icon: google-scholar
     icon_pack: ai
-    link: 
+    link: https://scholar.google.com/citations?user=crlgfVAAAAAJ&hl=it&authuser=2
 
 email: ''
 
