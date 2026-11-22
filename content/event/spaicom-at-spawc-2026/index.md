@@ -19,6 +19,10 @@ authors:
   - enrico-grimaldi
 tags: []
 featured: false
+image:
+  caption: 'Enrico Grimaldi presenting his poster at SPAWC 2026. Photo: SPAICOM'
+  focal_point: ''
+  preview_only: false
 url_code: ''
 url_pdf: ''
 url_slides: ''

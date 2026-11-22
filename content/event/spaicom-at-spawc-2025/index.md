@@ -19,6 +19,10 @@ authors:
   - giuseppe-di-poce
 tags: []
 featured: false
+image:
+  caption: 'Giuseppe Di Poce presenting his poster at SPAWC 2025. Photo: SPAICOM'
+  focal_point: ''
+  preview_only: false
 url_code: ''
 url_pdf: ''
 url_slides: ''
